@@ -1,20 +1,20 @@
-
 import streamlit as st
 
 import numpy as np
 import pandas as pd
 
-st.header("My first Streamlit App")
+st.header("My First Streamlit App")
 
 option = st.sidebar.selectbox(
-    'Select a mini project',
-     ['line chart','map','T n C'])
+    'Select',
+     ['1','map','T n C'])
 
 
-if option=='line chart':
-    chart_data = pd.DataFrame(
-    np.random.randn(20, 3),
-    columns=['a', 'b', 'c'])
+if option=='1':
+    label = list(total_match_2019.index.values)
+plt.pie(total_match_2019,labels=label,autopct='%1.1f%%')
+plt.title("Total Played Match")
+plt.show()
 
     st.line_chart(chart_data)
 
