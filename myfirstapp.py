@@ -1,7 +1,18 @@
 import streamlit as st
-
-import numpy as np
 import pandas as pd
+import numpy as np
+import plotly.express as px
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
+import matplotlib.pyplot as plt
+
+data = pd.read_table('Data.csv', index_col = False,  sep = ',', skipinitialspace = True)
+data
+
+df = data.drop(['Substitution ','xG', 'xG Per Avg Match',
+       'OnTarget',  'On Target Per Avg Match'], axis = 1)
+
+df.head()
 
 st.header("My First Streamlit App")
 
