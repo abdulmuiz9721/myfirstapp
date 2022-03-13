@@ -1,4 +1,4 @@
-%%writefile myfirstapp.py
+
 import streamlit as st
 
 import numpy as np
