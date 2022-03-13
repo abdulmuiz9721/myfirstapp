@@ -29,9 +29,15 @@ df3 = df2[df2["Goals"] > 15]
 
 if option=='Players with most goals in 2019':
   
-  chart_data = pd.DataFrame(df3,columns=['Player Names','Goals'])
-  df.plot(x ='Player Names', y='Goals', kind = 'bar')
-    st.bar_chart(chart_data)
+  
+
+    chart_data = px.bar(
+        Year, 
+        x='Player Names',
+        y='Goals',
+        
+        st.plotly_chart(chart_data)
+
 
     
 
