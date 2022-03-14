@@ -29,7 +29,7 @@ option = st.sidebar.selectbox(
      ['bar chart','T n C'])
 
 
-if option=='bar chart':   
+if 'bar chart':   
 df2 = pd.DataFrame(df,columns=['State','Total'])
 df.plot(x ='State', y='Total', kind = 'bar')
 plt.show()
