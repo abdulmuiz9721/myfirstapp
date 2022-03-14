@@ -26,10 +26,10 @@ def get_total_dataframe(dataset):
 
 
 if st.sidebar.checkbox("Graph", True, key=2):
-    st.markdown("## **Bar Graph**")
+    st.markdown("## **Line Graph**")
     if not st.checkbox('Hide Graph', False, key=1):
         state_total_graph = pd.DataFrame(df,columns=['State','Total'])
         x='State',
         y='Total',
-        st.bar_chart(state_total_graph)
+        st.line_chart(state_total_graph)
 
