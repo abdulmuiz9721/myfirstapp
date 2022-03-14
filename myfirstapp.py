@@ -43,5 +43,5 @@ fig = go.Figure(
     textinfo = "value"
 ))
     
-st.header("Pie chart")
+st.header("Total number of Covid-19 cases")
 st.plotly_chart(fig)
