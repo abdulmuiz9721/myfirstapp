@@ -25,9 +25,6 @@ def get_total_dataframe(dataset):
     'Number of Covid Case':(dataset.iloc[0]['Level 1'],dataset.iloc[0]['Level 2'],dataset.iloc[0]['Total'])})
     return total_dataframe
 
-    State =['Johor', 'Kedah','Kelantan', 'Melaka','Negeri Sembilan', 'Pahang', 'Pulau Pinang','Perak', 'Perlis']
-
-    Total = [814, 292, 407, 632, 1167, 474, 167, 628, 61]
 
 #The plot
 fig = go.Figure(
@@ -37,7 +34,9 @@ fig = go.Figure(
     hoverinfo = "label+percent",
     textinfo = "value"
 ))
+    State =['Johor', 'Kedah','Kelantan', 'Melaka','Negeri Sembilan', 'Pahang', 'Pulau Pinang','Perak', 'Perlis']
 
+    Total = [814, 292, 407, 632, 1167, 474, 167, 628, 61]
 st.header("Pie chart")
 st.plotly_chart(fig)
 
