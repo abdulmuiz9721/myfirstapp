@@ -30,7 +30,7 @@ option = st.sidebar.selectbox(
 
 if option=='line chart':
     chart_data = pd.DataFrame(
-    np.df(['State','Total'),
+    np.df(State,Total),
     columns=['State', 'Total'])
 
     st.line_chart(chart_data)
