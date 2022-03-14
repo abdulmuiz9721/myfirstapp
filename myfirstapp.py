@@ -1,36 +1,43 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import plotly.figure_factory as ff
+import plotly.express as px
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 
+df=pd.read_csv("Number of Cases of Covid-19 in 2020.csv")
+
+df.head()
+
+st.dataframe(df)
+
+st.sidebar.checkbox("State", True, key=1)
+select = st.sidebar.selectbox('Select a State',df['State'])
 
 
-st.header("My First Streamlit App")
+#get the state selected in the selectbox
+state_data = df[df['State'] == select]
+select_year = st.sidebar.radio("Level", ('Level 1','Level 2','Total'))
+
+def get_total_dataframe(dataset):
+    total_dataframe = pd.DataFrame({
+    'Level':['Level 1','Level 2','Total'],
+    'Number of Covid Case':(dataset.iloc[0]['Level 1'],dataset.iloc[0]['Level 2'],dataset.iloc[0]['Total'])})
+    return total_dataframe
+
+state_total = get_total_dataframe(state_data)
+
+if st.sidebar.checkbox("Graph", True, key=2):
+    st.markdown("## **Bar Graph**")
+    st.markdown("### Total number of cases "  % (select))
+    if not st.checkbox('Hide Graph', False, key=1):
+        state_total_graph = px.bar(
+        state_total, 
+        x='State',
+        y='Total',
+        labels={'Total':'Total %s' % (select)},
+        color='State')
+        st.plotly_chart(state_total_graph)
 
 
-option = st.sidebar.selectbox(
-    'Select',
-     ['Players with most goals in 2019','2','T n C'])
-
-#select data
-
-def load_data(nrows):
-    data = pd.read_table('Data.csv', index_col = False,  sep = ',', skipinitialspace = True)
-    df = data.drop(['Substitution ','xG', 'xG Per Avg Match',
-       'OnTarget', 'On Target Per Avg Match'], axis = 1)
-    df =data[(data["Year"] > 2018) & (data["Year"] < 2020)]
-    df2 = df[df['League'].isin(['Premier League', 'La Liga', 'Serie A', 'Bundesliga'])]
-    df3 = df2[df2["Goals"] > 15]
-    return df3
-
-
-if option=='Players with most goals in 2019':
-  
-  
-
-    chart_data = px.bar(df3, 
-        x='Player Names',
-        y='Goals',
-        
-        st.bar_chart(chart_data['2019_data'])
