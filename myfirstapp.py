@@ -25,13 +25,12 @@ def get_total_dataframe(dataset):
 
 option = st.sidebar.selectbox(
     'Select a mini project',
-     ['line chart','T n C'])
+     ['bar chart','T n C'])
 
 
-if option=='line chart':
-    chart_data = pd.DataFrame(
-    np.df(State,Total),
-    columns=['State', 'Total'])
-
-    st.line_chart(chart_data)
+if option=='bar chart':
+    chart_data = pd.DataFrame(df['State','Total'),
+    columns=['State', 'Total'],
+    x='State',y='Total'
+    st.bar_chart(chart_data)
 
