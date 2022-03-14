@@ -29,8 +29,8 @@ option = st.sidebar.selectbox(
      ['Pie chart'])
 
 
-if option == 'Pie chart': 
-Area =['Johor', 'Kedah','Kelantan', 'Melaka','Negeri Sembilan', 'Pahang', 'Pulau Pinang','Perak', 'Perlis']
+
+Area = ['Johor', 'Kedah','Kelantan', 'Melaka','Negeri Sembilan', 'Pahang', 'Pulau Pinang','Perak', 'Perlis']
 
 Total = [814, 292, 407, 632, 1167, 474, 167, 628, 61]
 
