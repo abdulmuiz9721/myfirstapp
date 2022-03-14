@@ -1,8 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from plotly.subplots import make_subplots
-import plotly.graph_objects as go
+
 import matplotlib.pyplot as plt
 
 df=pd.read_csv("Number of Cases of Covid-19 in 2020.csv")
