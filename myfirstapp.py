@@ -27,7 +27,7 @@ def get_total_dataframe(dataset):
 
 option = st.sidebar.selectbox(
     'Select a mini project',
-     ['bar chart','T n C'])
+     ['bar chart'])
 
 
 if option == 'Pie chart': 
@@ -46,7 +46,3 @@ fig = go.Figure(
 
 st.header("Pie chart")
 st.plotly_chart(fig)
-
-else:
-    st.write('Before you continue, please read the [terms and conditions](https://www.gnu.org/licenses/gpl-3.0.en.html)')
-    show = st.checkbox('I agree the terms and conditions')
