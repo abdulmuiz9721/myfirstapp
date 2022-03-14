@@ -27,7 +27,7 @@ def get_total_dataframe(dataset):
 
 if st.sidebar.checkbox("Graph", True, key=2):
     st.markdown("## **Bar Graph**")
-    st.markdown("### Total number of cases "  % (select))
+    st.markdown("### **Total number of cases**"  % (select))
     if not st.checkbox('Hide Graph', False, key=1):
         state_total_graph = pd.dataframe( 
         x='State',
