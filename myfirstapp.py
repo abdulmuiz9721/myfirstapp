@@ -34,10 +34,3 @@ if option=='Players with most goals in 2019':
         y='Goals',
         
         st.bar_chart(chart_data['2019_data'])
-
-
-    
-
-
-
-
