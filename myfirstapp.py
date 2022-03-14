@@ -31,7 +31,7 @@ option = st.sidebar.selectbox(
 
 
 if option == 'Pie chart': 
-    State=['Johor', 'Kedah','Kelantan', 'Melaka','Negeri Sembilan', 'Pahang', 'Pulau Pinang','Perak', 'Perlis,]
+    State=['Johor', 'Kedah','Kelantan', 'Melaka','Negeri Sembilan', 'Pahang', 'Pulau Pinang','Perak', 'Perlis']
 
     Total = [814, 292, 407, 632, 1167, 474, 167, 628, 61]
 
