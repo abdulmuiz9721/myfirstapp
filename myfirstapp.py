@@ -31,7 +31,5 @@ if st.sidebar.checkbox("Graph", True, key=2):
         state_total_graph = pd.DataFrame(df,columns=['State','Total'])
         x='State',
         y='Total',
-        labels={'Total':'Total %s' % (select)},
-        color='State')
         st.bar_chart(state_total_graph)
 
