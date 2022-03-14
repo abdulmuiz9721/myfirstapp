@@ -31,6 +31,5 @@ option = st.sidebar.selectbox(
 if option=='bar chart':
     chart_data = pd.DataFrame(df['State','Total']),
     columns=['State', 'Total'],
-    x='State',y='Total'
     st.bar_chart(chart_data)
 
