@@ -3,6 +3,21 @@ import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
 
+State =['Johor', 'Kedah','Kelantan', 'Melaka','Negeri Sembilan', 'Pahang', 'Pulau Pinang','Perak', 'Perlis']
+
+Total = [814, 292, 407, 632, 1167, 474, 167, 628, 61]
+
+#The plot
+fig = go.Figure(
+    go.Pie(
+    labels = 'State',
+    values = Total,
+    hoverinfo = "label+percent",
+    textinfo = "value"
+))
+    
+st.header("Pie chart")
+st.plotly_chart(fig)
 
 
 df=pd.read_csv("Number of Cases of Covid-19 in 2020.csv")
@@ -25,20 +40,5 @@ def get_total_dataframe(dataset):
     'Number of Covid Case':(dataset.iloc[0]['Level 1'],dataset.iloc[0]['Level 2'],dataset.iloc[0]['Total'])})
     return total_dataframe
 
-    'State' =['Johor', 'Kedah','Kelantan', 'Melaka','Negeri Sembilan', 'Pahang', 'Pulau Pinang','Perak', 'Perlis']
-
-    Total = [814, 292, 407, 632, 1167, 474, 167, 628, 61]
-
-#The plot
-fig = go.Figure(
-    go.Pie(
-    labels = 'State',
-    values = Total,
-    hoverinfo = "label+percent",
-    textinfo = "value"
-))
-    
-st.header("Pie chart")
-st.plotly_chart(fig)
-
+ 
 
