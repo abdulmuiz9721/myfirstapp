@@ -23,13 +23,15 @@ def get_total_dataframe(dataset):
     'Number of Covid Case':(dataset.iloc[0]['Level 1'],dataset.iloc[0]['Level 2'],dataset.iloc[0]['Total'])})
     return total_dataframe
 
+option = st.sidebar.selectbox(
+    'Select a mini project',
+     ['line chart','T n C'])
 
 
-if st.sidebar.checkbox("Graph", True, key=2):
-    st.markdown("## **Line Graph**")
-    if not st.checkbox('Hide Graph', False, key=1):
-        state_total_graph = pd.DataFrame(df,columns=['State','Total'])
-        x='State',
-        y='Total',
-        st.line_chart(state_total_graph)
+if option=='line chart':
+    chart_data = pd.DataFrame(
+    np.df(['State','Total'),
+    columns=['State', 'Total'])
+
+    st.line_chart(chart_data)
 
