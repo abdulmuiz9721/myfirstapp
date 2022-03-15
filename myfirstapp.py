@@ -45,3 +45,6 @@ fig = go.Figure(
     
 st.header("Total number of Covid-19 cases")
 st.plotly_chart(fig)
+
+st.sidebar.subheader('Data source: https://www.kaggle.com/mahirahmzh/covid-19-malaysia')
+st.sidebar.subheader('Special thank to Dr Yu and Dr Yan Bin')
